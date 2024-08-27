@@ -8,6 +8,7 @@ app.use(express.static('dist'));
 //     res.send('server is ready')
 // })
 
+
 app.get('/api/jokes', (req, res) => {
     res.json({
       jokes: [
