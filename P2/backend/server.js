@@ -2,11 +2,13 @@ import express from 'express';
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('server is ready')
-})
+app.use(express.static('dist'));
 
-app.get('/jokes', (req, res) => {
+// app.get('/', (req, res) => {
+//     res.send('server is ready')
+// })
+
+app.get('/api/jokes', (req, res) => {
     res.json({
       jokes: [
         {
@@ -40,7 +42,7 @@ app.get('/jokes', (req, res) => {
 
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log(`server is listening at ${port}`);
